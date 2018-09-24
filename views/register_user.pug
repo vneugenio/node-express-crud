@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1.display-4.text-center #{title}
+    
+    div.col-md-6.p-5.mx-auto
+        
+        form(method='POST', action='/users/registration')
+            #form-group
+                label Username:
+                input.form-control(name='username', type='text')
+            #form-group
+                label Email:
+                input.form-control(name='email', type='text') 
+            #form-group
+                label Password:
+                input.form-control(name='password', type='password')         
+            input.btn.btn-primary.mt-4(type='submit', value='Register User')
