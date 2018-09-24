@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h3.text-center Edit details for #{title}
+    
+    div.col-md-6.p-5.mx-auto
+        
+        form(method='POST', action='/users/edit/' + user.id)
+            #form-group
+                label Username:
+                input.form-control(name='username', type='text' value=user.username)
+            #form-group
+                label Email:
+                input.form-control(name='email', type='text' value=user.email) 
+            //- #form-group
+            //-     label Password:
+            //-     input.form-control(name='password', type='password')         
+            input.btn.btn-primary.mt-4(type='submit', value='Update Details')

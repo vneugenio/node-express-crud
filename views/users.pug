@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1(class="pugClass") #{title}
+    table.table.table-striped
+        thead
+            tr
+                th(scope='col') Username
+                th(scope='col') Email
+                th(scope='col') Date Created
+                th(scope='col') Actions
+        tbody    
+            each user in users
+                tr
+                    td= user.username
+                    td= user.email
+                    td= user.time
+                    td 
+                        a(href='/users/edit/' + user.id)
+                            button.btn.btn-warning.mx-1 Edit
+                        a(href='/users/delete/' + user.id)
+                            button.btn.btn-danger.mx-1 Delete
